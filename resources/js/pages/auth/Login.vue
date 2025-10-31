@@ -17,6 +17,10 @@ defineProps<{
     canResetPassword: boolean;
     canRegister: boolean;
 }>();
+
+function loginWithGoogle() {
+    window.location.href = '/auth/redirect';
+}
 </script>
 
 <template>
@@ -100,7 +104,27 @@ defineProps<{
                     Log in
                 </Button>
             </div>
-
+            <div class="flex flex-col items-center gap-2">
+                Or login with
+                <Button
+                    type="button"
+                    class="w-full flex items-center justify-center gap-2"
+                    @click="loginWithGoogle"
+                    :tabindex="6"
+                    variant="outline"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 48 48">
+                        <g>
+                            <path fill="#4285F4" d="M24 9.5c3.54 0 6.7 1.23 9.19 3.25l6.85-6.85C36.18 2.69 30.45 0 24 0 14.64 0 6.4 5.84 2.44 14.36l7.98 6.21C12.17 14.13 17.61 9.5 24 9.5z"/>
+                            <path fill="#34A853" d="M46.1 24.5c0-1.6-.14-3.13-.39-4.61H24v9.01h12.44c-.54 2.91-2.17 5.38-4.62 7.04l7.19 5.59C43.96 37.36 46.1 31.44 46.1 24.5z"/>
+                            <path fill="#FBBC05" d="M10.42 28.57c-1.04-3.09-1.04-6.41 0-9.5l-7.98-6.21C.64 16.56 0 20.18 0 24c0 3.82.64 7.44 2.44 10.14l7.98-6.21z"/>
+                            <path fill="#EA4335" d="M24 48c6.45 0 11.88-2.13 15.84-5.81l-7.19-5.59c-2.01 1.35-4.59 2.15-8.65 2.15-6.39 0-11.83-4.63-13.58-10.86l-7.98 6.21C6.4 42.16 14.64 48 24 48z"/>
+                            <path fill="none" d="M0 0h48v48H0z"/>
+                        </g>
+                    </svg>
+                    Google
+                </Button>
+            </div>
             <div
                 class="text-center text-sm text-muted-foreground"
                 v-if="canRegister"
