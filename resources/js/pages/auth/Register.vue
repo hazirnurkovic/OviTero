@@ -55,6 +55,19 @@ import { LoaderCircle } from 'lucide-vue-next';
                 </div>
 
                 <div class="grid gap-2">
+                    <Label for="profession">Profession</Label>
+                    <Input
+                        id="profession"
+                        type="text"
+                        :tabindex="2"
+                        autocomplete="profession"
+                        name="profession"
+                        placeholder="Your profession"
+                    />
+                    <InputError :message="errors.profession" />
+                </div>
+
+                <div class="grid gap-2">
                     <Label for="password">Password</Label>
                     <Input
                         id="password"

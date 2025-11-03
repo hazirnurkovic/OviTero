@@ -40,7 +40,7 @@ const user = page.props.auth.user;
             <div class="flex flex-col space-y-6">
                 <HeadingSmall
                     title="Profile information"
-                    description="Update your name and email address"
+                    description="Update your name, email address and profession details."
                 />
 
                 <Form
@@ -75,6 +75,22 @@ const user = page.props.auth.user;
                             placeholder="Email address"
                         />
                         <InputError class="mt-2" :message="errors.email" />
+                    </div>
+
+                    <div class="grid gap-2">
+                        <Label for="profession">Profession</Label>
+                        <Input
+                            id="profession"
+                            class="mt-1 block w-full"
+                            name="profession"
+                            :default-value="user.profession"
+                            autocomplete="profession"
+                            placeholder="Your profession"
+                        />
+                        <InputError
+                            class="mt-2"
+                            :message="errors.profession"
+                        />
                     </div>
 
                     <div v-if="mustVerifyEmail && !user.email_verified_at">

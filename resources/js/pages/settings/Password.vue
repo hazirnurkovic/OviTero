@@ -58,7 +58,7 @@ const currentPasswordInput = ref<HTMLInputElement | null>(null);
                             type="password"
                             class="mt-1 block w-full"
                             autocomplete="current-password"
-                            placeholder="Current password"
+                            placeholder="Current password (leave blank if logged in with social account)"
                         />
                         <InputError :message="errors.current_password" />
                     </div>

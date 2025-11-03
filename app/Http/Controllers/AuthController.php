@@ -22,7 +22,7 @@ class AuthController extends Controller
         Auth::login($result['user']);
 
         if ($result['status'] === 'created') {
-            return redirect('/welcome');
+            return redirect()->route('profile.edit');
         }
         
         return redirect('/dashboard');
